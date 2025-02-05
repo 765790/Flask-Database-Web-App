@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>{{action}} 图书</title>
+</head>
+<body>
+    <h1>{{action}} 图书</h1>
+    <form method="post">
+        <label for="book_id">book_id:</label>
+        <input type="text" id="book_id" name="book_id" value="{{book.book_id if book else ''}}" required><br> 
+        <label for="book_name">book_name:</label>
+        <input type="text" id="book_name" name="book_name" value="{{book.book_name if book else ''}}" required><br>
+        <label for="book_isbn">book_isbn:</label>
+        <input type="text" id="book_isbn" name="book_isbn" value="{{book.book_isbn if book else ''}}" required><br>
+        <label for="book_author">book_author:</label>
+        <input type="text" id="book_author" name="book_author" value="{{book.book_author if book else ''}}" required><br>
+        <label for="book_publisher">book_publisher:</label>
+        <input type="text" id="book_publisher" name="book_publisher" value="{{book.book_publisher if book else ''}}" required><br>
+        <label for="book_price">book_price:</label>
+        <input type="number" step="0.01" id="book_price" name="book_price" value="{{book.book_price if book else ''}}" required><br>
+        <label for="interview_times">interview_times:</label>
+        <input type="number" id="interview_times" name="interview_times" value="{{book.interview_times if book else ''}}" required><br>
+        <button type="submit">{{action}}</button>
+    </form>
+</body>
+
+</html>

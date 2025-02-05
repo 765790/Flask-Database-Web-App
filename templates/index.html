@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "zh">
+<head>
+    <meta charset="utf-8">
+    <title>图书表管理系统</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <h1>图书表管理系统</h1>
+
+    <table border="1">
+        <tr>
+            <th>book_id</th>
+            <th>book_name</th>
+            <th>book_isbn</th>
+            <th>book_author</th>
+            <th>book_publisher</th>
+            <th>book_price</th>
+            <th>interview_times</th>
+            <th>actions</th>
+        </tr>
+
+        {% for book in books %}
+        <tr>
+        <td>{{book.book_id}}</td>
+        <td>{{book.book_name}}</td>
+        <td>{{book.book_isbn}}</td>
+        <td>{{book.book_author}}</td>
+        <td>{{book.book_publisher}}</td>
+        <td>{{book.book_price}}</td>
+        <td>{{book.interview_times}}</td>
+        <td>
+            <a href="/edit/{{book.book_id}}">编辑</a>
+            <a href="/delete/{{book.book_id}}">删除</a>
+        </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/add">添加</a>
+</body>
+</html>
